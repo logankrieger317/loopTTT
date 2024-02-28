@@ -1,0 +1,159 @@
+body{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(150, 150, 150, 0.5);
+
+    color: red;
+    
+}
+
+#board{
+    display:grid;
+    grid-template-columns:  100px 100px 100px;
+    grid-template-rows:  100px 100px 100px;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 0 0 2px rgba(218, 102, 123, 1), 8px 8px 0 0 rgba(218, 102, 123, 1);
+    animation: random-shadow 10s ease-in-out infinite;
+    
+}
+
+h1{
+    color: currentColor;
+}
+
+.tile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+
+.right-border{
+    border-right: .2em solid currentColor;
+}
+
+.bottom-border {
+    border-bottom: .2em solid currentColor;
+}
+
+.strike{
+    position:absolute;
+    background-color: currentColor;
+}
+
+.strike-row-1{
+    width: 100%;
+    height: 4px;
+    top:15%;
+}
+
+.strike-row-2 {
+    width: 100%;
+    height: 4px;
+    top: 48%;
+}
+
+.strike-row-3 {
+    width: 100%;
+    height: 4px;
+    top: 83%;
+}
+
+.strike-column-1 {
+    width: 4px;
+    height: 100%;
+    left: 15%;
+    
+}
+
+.strike-column-2 {
+    width: 4px;
+    height: 100%;
+    left: 48%;
+}
+
+.strike-column-3 {
+    width: 4px;
+    height: 100%;
+    left: 83%;
+}
+
+.strike-diagonal-1{
+    width: 100%;
+    height: 4px;
+    top: 50%;
+    transform: skewY(45deg);
+
+}
+
+.strike-diagonal-2 {
+    width: 100%;
+    height: 4px;
+    top: 50%;
+    transform: skewY(-45deg);
+}
+
+#game-over-area{
+    text-align: center;
+    padding: 50px;
+    margin-top:50px;
+}
+
+#game-over-text{
+    color: currentColor;
+    font-size: 3em;
+    margin-top:0;
+}
+
+button{
+    background-color: transparent;
+    color: currentColor;
+    border: currentColor solid 1px;
+    padding: 10px;
+    font-size: 1.5em;
+    
+}
+
+.hidden{
+    display:none;
+}
+
+.visible{
+    display: block;
+}
+
+.x-hover:hover::after{
+    content: "X";
+    opacity: 0.4;
+}
+
+.o-hover:hover::after{
+    content:"O";
+    opacity: 0.4;
+}
+
+
+@keyframes random-shadow {
+    0% {
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+    }
+
+    25% {
+        box-shadow: 0 0 20px rgba(0, 255, 0, 0.6);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(0, 0, 255, 0.6);
+    }
+
+    75% {
+        box-shadow: 0 0 20px rgba(255, 255, 0, 0.6);
+    }
+
+    100% {
+        box-shadow: 0 0 20px rgba(255, 0, 255, 0.6);
+    }
+}
